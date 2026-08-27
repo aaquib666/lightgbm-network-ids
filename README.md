@@ -335,10 +335,4 @@ Run the IDS in `--dry-run` mode while testing to observe classification behaviou
 | `logger.py` | Chapter 5, Section 5.5 — User Interface (terminal-based reporting) |
 | `ids_main.py` | Chapter 5, Section 5.5 — Linux background detection process |
 
-## License
-
-Add a license of your choice (e.g. MIT) before making the repository public, or state that this is academic/coursework code not licensed for reuse.
-
----
-
 *Developed as the practical component of a BSc Cyber Security (Hons) Final Year Project — Staffordshire University, 2026.*
