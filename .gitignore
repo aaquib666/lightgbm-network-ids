@@ -1,0 +1,31 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment/secrets
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python build files
+*.egg-info/
+dist/
+build/

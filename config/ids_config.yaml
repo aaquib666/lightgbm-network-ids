@@ -1,0 +1,35 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# IDS Configuration — Deployment-Layer Thresholds
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# These values control the hybrid detection policy that sits between
+# the LightGBM model's raw prediction and the automated iptables response.
+#
+# The model was trained on CSE-CIC-IDS2018 + CICDDoS2019 and tends to be
+# over-aggressive on real-world traffic.  The thresholds below prevent
+# false-positive containment of legitimate traffic (browsing, DNS, updates)
+# while still catching genuine high-rate DoS/DDoS floods.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Detection thresholds ────────────────────────────────────────────────────
+# Confidence below this value → NORMAL (no action)
+suspicious_threshold: 0.70
+
+# Confidence at or above this value AND volumetric thresholds met → ATTACK
+detection_threshold: 0.90
+
+# ── Volumetric thresholds (at least one must be exceeded for ATTACK) ────────
+min_packets_per_second: 1000
+min_packet_count: 50
+min_bytes_per_second: 1000000
+
+# ── Safe response mode ──────────────────────────────────────────────────────
+# When true, containment (iptables block) is only executed if the flow's
+# traffic volume exceeds the volumetric thresholds.  High-confidence
+# predictions on low-volume traffic are logged but NOT blocked.
+safe_response_mode: true
+
+# ── Whitelist ────────────────────────────────────────────────────────────────
+# Path to a plain-text file of IP addresses that should never be blocked.
+# One IP per line.  Lines starting with '#' are comments.
+whitelist_file: config/whitelist.txt

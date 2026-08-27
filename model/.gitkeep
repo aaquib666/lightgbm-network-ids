@@ -1,0 +1,2 @@
+# Placeholder — place your pre-trained LightGBM model here.
+# Expected filename: lgbm_model.pkl (saved via joblib.dump)
