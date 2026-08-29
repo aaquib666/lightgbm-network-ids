@@ -29,3 +29,25 @@ Thumbs.db
 *.egg-info/
 dist/
 build/
+
+# Datasets
+data/
+datasets/
+*.csv
+*.pcap
+*.pcapng
+*.parquet
+
+# Trained models
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.h5
+*.keras
+*.onnx
+
+# Generated outputs
+results/
+outputs/
+logs/
